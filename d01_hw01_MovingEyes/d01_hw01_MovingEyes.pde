@@ -3,7 +3,6 @@ float pupilY = 400;
 float pupilRight = 400;
 float speed = 1;
 int hue= 50;
-color leftColor = color(255, 204, 0);
 
 boolean hasClicked= false;
 
@@ -14,14 +13,11 @@ void setup() {
 
 void draw() {
   background(0);
-  background(0);
-  smooth();
-
+  
   fill(255);
   stroke(0);
-  strokeWeight(2);
   ellipse(400, 400, 250, 350);
-
+  
   //eyes back 
   strokeWeight(3);
   fill(255);
@@ -46,24 +42,26 @@ void draw() {
 
   noStroke();
   if (hasClicked == false) {
+    fill(0);
     pupilLeft= map(mouseX, 0, width, 300, 340);
     pupilY = map(mouseY, 0, height, 300, 330);
     pupilRight = map(mouseX, 0, width, 450, 480);
   } else {
-    fill(hue, 255, 255);
-    pupilLeft += 5;
-    pupilLeft = map(mouseX, 0, width, 600, 4400);
+    fill(255,0,0);
+    pupilLeft= map(mouseX, 0, width, 300, 340);
     pupilY = map(mouseY, 0, height, 300, 330);
-    pupilRight = map(mouseX, 0, width,  800, 800);
+    pupilRight = map(mouseX, 0, width, 450, 480);
   }
   
-  fill(random(hue));
-
   ellipse(pupilLeft, pupilY, 40, 40);
   ellipse(pupilRight, pupilY, 40, 40);
 }
 
-void mouseClicked() {
+void mousePressed() {
   hasClicked = true;
+}
+
+void mouseReleased() {
+  hasClicked = false;
 }
 

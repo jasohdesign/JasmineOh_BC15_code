@@ -30,14 +30,14 @@ void draw() {
   int circleSize = int(map(loc, 0, width*height, 1, 30)); 
   ellipse(x,y,circleSize,circleSize);
   
-  
-  if(keyPressed) {
+}
+  void keyReleased() {
     if(key == 's') {
        saveFrame(); 
     }
   }
   
   
-}
+
 
 
