@@ -30,7 +30,6 @@ void setup(){
 
 void draw(){
   pushMatrix();
-  //lights();
   translate(x,y,z);
   rotateX(1.25);
   rotateY(-0.4); //<>//
@@ -61,6 +60,10 @@ void mousePressed(){
   if (x <500){
     frameRate(30);
   }
-  
-  
 }
+void keyPressed(){
+  if (key == 's'){
+    saveFrame();
+  }
+}
+  
